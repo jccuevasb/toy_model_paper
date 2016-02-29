@@ -21,31 +21,14 @@ Recent studies indicate that the structure of the turbulent boundary layer at hi
 %Words=207.
 \maketitle
 \section{Numerical Methods}
-A stream-wise master velocity profile is represented by a set of discrete steps, each one with an evenly distributed width of $U_i^+$ units according with Eq.~\ref{eq:upvel} and a height of $y^+_i$ units according with Eq.~\ref{eq:yppos}. Since the thickness of the
-vortical fissures is  $\mathcal{O}(1/\sqrt{Re})$, it is considered negligible in this model. Eqs.~\ref{eq:upvel} and \ref{eq:yppos} are derived from the MMB theory~\citep{Klewickimmb}. Table~\ref{tab:4layerstructure},%
-\begin{table}[b]%
-\caption{\label{tab:4layerstructure}%
-Scaling associated to four layer structure from MMB theory. $\Delta y$ represents the wall normal position of the vortical fissure in the turbulent boundary layer while $\Delta u$ represents the velocity associated to each layer.
-}
-\begin{ruledtabular}
-\begin{tabular}{ccc}
-\textrm{Layer}&
-\textrm{$\Delta y$}&
-\textrm{$\Delta u$}\\
-\colrule
-I &$\mathcal{O}(\nu/u_{\tau})(\lesssim 3)$&$\mathcal{O}(u_{\tau})(\lesssim 3)$\\
-II &$\mathcal{O}(\sqrt{\nu\delta/u_{\tau}})(\sim 1.6)$&$\mathcal{O}(U_{\infty})(\sim 0.5)$\\
-III &$\mathcal{O}(\sqrt{\nu\delta/u_{\tau}})(\sim 1.0)$&$\mathcal{O}(u_{\tau})(\sim 1)$\\
-IV &$\mathcal{O}(\delta)(\rightarrow 3)$&$\mathcal{O}(U_{\infty})(\rightarrow 0.5)$ \\
-\end{tabular}
-\end{ruledtabular}
-\end{table}
-summarize the wall normal positions and the speed increments in the four-layer structure given by\cite{Klewickimmb}. These increments can be also obtained by the recurrence formulas
+A stream-wise master velocity profile is represented by a set of discrete steps uniformly spaced according with Eqs.~\ref{eq:upvel} and ~\ref{eq:yppos}, 
 \begin{align}
 U^+_{i+1}=&U^+_i+\phi_c^2 ln(\phi_c) \label{eq:upvel},\\
-y^+_{i+1}=&\phi_c y^+_i \label{eq:yppos},
+y^+_{i+1}=&\phi_c y^+_i \label{eq:yppos}.
 \end{align}
-where  $\phi_c=(1+\sqrt{5})/2$ is a constant factor while the initial wall normal position and stream-wise normalized velocity have been set to $y^+_0=3.5$ and $U^+_0=0.5 U_{\infty}^+$ respectively. In this paper different free-stream normalized velocities $U_{\infty}^+$ are used. Using the information described above a master profile is constructed, the input parameters are the Reynolds number associated with the boundary layer thickness
+These relationships are  derived from the MMB theory~\citep{Klewickimmb}, where Eq.~\ref{eq:upvel} determine the increments in the stream-wise normalized velocity $U^+$, the width of the steps in the $x$ coordinate and
+Eq.~\ref{eq:yppos} determine the increments in the normalized wall normal position $y^+$, the height of the steps in the y coordinate (See Fig.~\ref{fig:master_profile}). The initial wall normal position was set to $y^+_0=100$ in order to coincide with the boundary edge of the log-layer in the traditional law-wall theory and $U^+_0=0.5 U_{\infty}^+$ to be the half of the free-stream velocity. The constant factor $\phi_c$ is given by $\phi_c=(1+\sqrt{5})/2$ and since the thickness of the
+vortical fissures scales like $\mathcal{O}(1/\sqrt{Re})$, it is considered negligible for this model.  Using the information described above a master profile is constructed, the input parameters are the Reynolds number associated with the boundary layer thickness
 
 \begin{equation}\label{eq:deltap}
 \delta^+=\frac{\delta}{\nu/u_{\tau}},
