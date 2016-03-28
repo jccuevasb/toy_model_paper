@@ -1,5 +1,6 @@
 %\documentclass[aps,preprint,amsmath,amssymb]{revtex4-1}% APS journal style
-\documentclass[aps,reprint,amsmath,amssymb,prl]{revtex4-1}% APS journal style
+%\documentclass[aps,reprint,amsmath,amssymb,prl]{revtex4-1}% APS journal style prl physical review letters
+\documentclass[aps,reprint,amsmath,amssymb,pra]{revtex4-1}% APS journal pra default
 %\documentclass[aps,reprint,amsmath,amssymb,prl,longbibliography]{revtex4-1}% to show the title of the articles in the bibliography
 \usepackage{graphicx}% Include figure files
 \usepackage{dcolumn}% Align table columns on decimal point
@@ -21,7 +22,7 @@ Recent studies indicate that the structure of the turbulent boundary layer at hi
 \keywords{turbulent boundary layer, uniform momentum zones, vortical fissures and Mean Momentum Balance theory.}
 %Words=207.
 \maketitle
-\section{Numerical Methods}
+\section{\label{sec:nm} Numerical Methods}
 A  step master stream-wise velocity profile is represented by a set of discrete steps uniformly spaced according with Eqs.~\ref{eq:upvel} and ~\ref{eq:yppos}, 
 \begin{align}
 U^+_{i+1}=&U^+_i+\phi_c^2 ln(\phi_c) \label{eq:upvel},\\
@@ -43,12 +44,16 @@ Then instantaneous multiple velocity profiles are created by simulate a random m
 \includegraphics[scale=0.46]{figures/multiple_instantaneous_vprof}
 \caption{\label{fig:mul_profiles} Multiple instantaneous velocity profiles with a gaussian perturbation of mean $\mu=0$ and standard deviation $\sigma=0.4$.}
 \end{figure}
-The multiple instantaneous step velocity profiles are considered independent events since they are the result of the Gaussian perturbation in the wall normal positions of the master profile. Thus to achieve statistical convergence the mean turbulent stream-wise velocity profile is constructed by average over 5000 independent realizations (See Fig.~\ref{fig:mean_profile}).
+The multiple instantaneous step velocity profiles are considered independent events since they are the result of the Gaussian perturbation in the wall normal positions of the master profile. Thus to achieve statistical convergence the mean turbulent stream-wise velocity profile is constructed by average over 5000 independent realizations. (See Fig.~\ref{fig:mean_profile}).
 \begin{figure}[b]
 \includegraphics[scale=0.46]{figures/Master_averaged_step_profile_5000_assembles}
 \caption{\label{fig:mean_profile} Mean turbulent stream-wise velocity profile for 5000 independent realizations with a Gaussian perturbation of $\mu=0$ and $\sigma=0.4$.}
 \end{figure} 
-\section{Mean turbulent statistics}
+\section{Mean turbulent statistics analysis}
+To prove the accurateness of our model, the high order moments such as the mean, variance, skewness and kurtosis of the mean turbulent streamwise velocity profile were computed. Like it was described in~\ref{sec:nm}, not only a Gaussian perturbation was used to randomize the positions of the vortical fissure but also an uniform distribution. The main purpose was explore the relationship between the perturbation distribution and the statistics of our model. This could give us some insight about how this process occurs in a real turbulent flow.
+\subsection{Gaussian perturbation}
+Two scenarios for the Gaussian perturbation were considered, for $\sigma=0.4$ and $\sigma=1$ with $\mu=0$ respectively. First scenario considers that the random variation in the position of the vortical fissures ranges between $-120\%$ and $120\%$ of their current positions, being $3\sigma$ events less likely. Figure 
+\subsection{Uniform distribution}    
 %\nocite{*}
 \bibliography{Aps_template2}% Produces the bibliography via BibTeX.
 \end{document}
