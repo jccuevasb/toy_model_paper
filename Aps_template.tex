@@ -44,15 +44,32 @@ Then instantaneous multiple velocity profiles are created by simulate a random m
 \includegraphics[scale=0.46]{figures/multiple_instantaneous_vprof}
 \caption{\label{fig:mul_profiles} Multiple instantaneous velocity profiles with a gaussian perturbation of mean $\mu=0$ and standard deviation $\sigma=0.4$.}
 \end{figure}
-The multiple instantaneous step velocity profiles are considered independent events since they are the result of the Gaussian perturbation in the wall normal positions of the master profile. Thus to achieve statistical convergence the mean turbulent stream-wise velocity profile is constructed by average over 5000 independent realizations. (See Fig.~\ref{fig:mean_profile}).
-\begin{figure}[b]
-\includegraphics[scale=0.46]{figures/Master_averaged_step_profile_5000_assembles}
-\caption{\label{fig:mean_profile} Mean turbulent stream-wise velocity profile for 5000 independent realizations with a Gaussian perturbation of $\mu=0$ and $\sigma=0.4$.}
-\end{figure} 
+The multiple instantaneous step velocity profiles are considered independent events since they are the result of the Gaussian perturbation in the wall normal positions of the master profile. Thus to achieve statistical convergence the mean turbulent stream-wise velocity profile is constructed by average over 5000 independent realizations.
 \section{Mean turbulent statistics analysis}
 To prove the accurateness of our model, the high order moments such as the mean, variance, skewness and kurtosis of the mean turbulent streamwise velocity profile were computed. Like it was described in~\ref{sec:nm}, not only a Gaussian perturbation was used to randomize the positions of the vortical fissure but also an uniform distribution. The main purpose was explore the relationship between the perturbation distribution and the statistics of our model. This could give us some insight about how this process occurs in a real turbulent flow.
 \subsection{Gaussian perturbation}
-Two scenarios for the Gaussian perturbation were considered, for $\sigma=0.4$ and $\sigma=1$ with $\mu=0$ respectively. First scenario considers that the random variation in the position of the vortical fissures ranges between $-120\%$ and $120\%$ of their current positions, being $3\sigma$ events less likely. Figure 
+Two scenarios for the Gaussian perturbation were considered, for $\sigma=0.4$ and $\sigma=1$ with $\mu=0$ respectively. First scenario considers that the random variation in the position of the vortical fissures ranges between $-120\%$ and $120\%$ of their current positions, being $3\sigma$ events less likely. Fig~\ref{fig:mean_profile}). 
+\begin{figure}[b]
+\includegraphics[scale=0.46]{figures/Master_averaged_step_profile_5000_assembles}
+\caption{\label{fig:mean_profile} Mean turbulent stream-wise velocity profile for 5000 independent realizations with a Gaussian perturbation of $\mu=0$ and $\sigma=0.4$.}
+\end{figure}
+
+\begin{figure}[b]
+\includegraphics[scale=0.46]{figures/variance_5000_assembles}
+\caption{\label{fig:varigaus} Mean turbulent stream-wise velocity profile for 5000 independent realizations with a Gaussian perturbation of $\mu=0$ and $\sigma=0.4$.}
+\end{figure}
+
+\begin{figure}[b]
+\includegraphics[scale=0.46]{figures/skewness_5000_assembles}
+\caption{\label{fig:skewgaus} Mean turbulent stream-wise velocity profile for 5000 independent realizations with a Gaussian perturbation of $\mu=0$ and $\sigma=0.4$.}
+\end{figure}
+
+\begin{figure}[b]
+\includegraphics[scale=0.46]{figures/kurtosis_5000_assembles}
+\caption{\label{fig:kurt} Mean turbulent stream-wise velocity profile for 5000 independent realizations with a Gaussian perturbation of $\mu=0$ and $\sigma=0.4$.}
+\end{figure}
+
+
 \subsection{Uniform distribution}    
 %\nocite{*}
 \bibliography{Aps_template2}% Produces the bibliography via BibTeX.
