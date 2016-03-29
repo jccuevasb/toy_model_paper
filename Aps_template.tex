@@ -48,29 +48,61 @@ The multiple instantaneous step velocity profiles are considered independent eve
 \section{Mean turbulent statistics analysis}
 To prove the accurateness of our model, the high order moments such as the mean, variance, skewness and kurtosis of the mean turbulent streamwise velocity profile were computed. Like it was described in~\ref{sec:nm}, not only a Gaussian perturbation was used to randomize the positions of the vortical fissure but also an uniform distribution. The main purpose was explore the relationship between the perturbation distribution and the statistics of our model. This could give us some insight about how this process occurs in a real turbulent flow.
 \subsection{Gaussian perturbation}
-Two scenarios for the Gaussian perturbation were considered, for $\sigma=0.4$ and $\sigma=1$ with $\mu=0$ respectively. First scenario considers that the random variation in the position of the vortical fissures ranges between $-120\%$ and $120\%$ of their current positions, being $3\sigma$ events less likely. Fig~\ref{fig:mean_profile}). 
+Multiple scenarios with different standard deviation were investigated for the Gaussian perturbation, however just two are presented here. They represent bad coherence with the experimental results $\sigma=0.4$ and good coherence with the experimental results $\sigma=1$, both with $\mu=0$. First scenario considers that the random variation in the position of the vortical fissures ranges between $-120\%$ and $120\%$ of their current positions, being $3\sigma$ events less likely. Fig~\ref{fig:mean_profile} is the mean turbulent velocity profile for the first scenario. It can be appreciated regions of relative uniform velocity along with small velocity jumps located close to the wall normal positions of the vortical fissures. This phenomena is known like clusterization and it is the result of the average of vortical fissures having the same velocities in the same wall normal positions.\\
 \begin{figure}[b]
 \includegraphics[scale=0.46]{figures/Master_averaged_step_profile_5000_assembles}
 \caption{\label{fig:mean_profile} Mean turbulent stream-wise velocity profile for 5000 independent realizations with a Gaussian perturbation of $\mu=0$ and $\sigma=0.4$.}
 \end{figure}
 
+Fig~\ref{fig:varigaus}. shows the variance of the streamwise fluctuations for $5000$ independent realizations as a function of the wall normal position. Here the clusterization phenomena is more evident, this is one of the consequences which is known like pseudo-random number generators. Since the Gaussian random numbers are not totally independent but they are computed through a deterministic algorithm, wall normal positions can be populated with the same vortical fissures several times. It is also remarkable that for this scenario crossing vortical fissures are rarely observed. 
+
 \begin{figure}[b]
 \includegraphics[scale=0.46]{figures/variance_5000_assembles}
-\caption{\label{fig:varigaus} Mean turbulent stream-wise velocity profile for 5000 independent realizations with a Gaussian perturbation of $\mu=0$ and $\sigma=0.4$.}
+\caption{\label{fig:varigaus} Stream-wise velocity variance for 5000 independent realizations with a Gaussian perturbation of $\mu=0$ and $\sigma=0.4$.}
 \end{figure}
+A semilogarithmic plot in the x-axis of the skewness for the streamwise fluctuations as a function of the wall normal position is shown in Fig~\ref{fig:skewgaus}. It shows the right tendency for wall normal positions close to the wall and in the boundary edge. However in the logarithmic region the skewness oscillates around the Gaussian value, these
+rapid variations are caused by clustering effect. Unlike the skewness (Fig~\ref{fig:skewgaus}), the stream-wise velocity kurtosis oscillations are higher if they are compared with the Gaussian distribution where the kurtosis is equal to 3. This behaviour does not reproduce accurately the turbulence statistics and thus we explore higher values of $\sigma$ in the Gaussian perturbation.\\
 
-\begin{figure}[b]
+\begin{figure}[tb]
 \includegraphics[scale=0.46]{figures/skewness_5000_assembles}
-\caption{\label{fig:skewgaus} Mean turbulent stream-wise velocity profile for 5000 independent realizations with a Gaussian perturbation of $\mu=0$ and $\sigma=0.4$.}
+\caption{\label{fig:skewgaus} Stream-wise velocity skewness for 5000 independent realizations with a Gaussian perturbation of $\mu=0$ and $\sigma=0.4$ (open circles). The skewness for a Gaussian distribution is plotted in dotted lines as a reference.}
 \end{figure}
-
-\begin{figure}[b]
+In the second scenario $\sigma=1$, hence the random motion of the vortical fissures range between $-300\%$ and $300\%$ of their respective height of the step (see~\ref{sec:nm}). Fig~\ref{fig:mp_gau100}. shows a smoother profile compared with the first scenario where clustering effect was evidenced. These mean velocity profile exhibit the right trend for $\delta^+=5200$, the constant velocity close to the wall ($y^+=0-118$) is a consequence of the boundary conditions where the first step velocity is held fixed.
+\begin{figure}[tb]
 \includegraphics[scale=0.46]{figures/kurtosis_5000_assembles}
-\caption{\label{fig:kurt} Mean turbulent stream-wise velocity profile for 5000 independent realizations with a Gaussian perturbation of $\mu=0$ and $\sigma=0.4$.}
+\caption{\label{fig:kurt} Stream-wise velocity kurtosis for 5000 independent realizations with a Gaussian perturbation of $\mu=0$ and $\sigma=0.4$ (open circles). The kurtosis for a Gaussian distribution is plotted in dotted lines as a reference.}
+\end{figure}
+In addition to the mean, the second, third and fourth order moments are also computed for this scenario. The stream-wise velocity variance as a function of $y^+$ is shown in Fig~\ref{fig:varigaus100}.\\ 
+It can be seen that the variance start to exhibit the right trend, namely zero near to the wall with its maximum value in the onset of the logarithmic region and then decrease almost logarithmically toward the boundary layer edge. 
+\begin{figure}[tb]
+\includegraphics[scale=0.46]{figures/Master_averaged_step_profile_5000_assembles_gaus100}
+\caption{\label{fig:mp_gau100} Mean turbulent stream-wise velocity profile for 5000 independent realizations with a Gaussian perturbation of $\mu=0$ and $\sigma=1$.}
+\end{figure}
+Also note that there is not evidence of clustering effect, since a wider range in the vertical perturbations allow the vortical fissures to cross through the boundary layer creating a more homogeneous distribution of the stream-wise velocity. 
+\begin{figure}[b]
+\includegraphics[scale=0.46]{figures/variance_5000_assembles_gauss100}
+\caption{\label{fig:varigaus100} Stream-wise velocity variance for 5000 independent realizations with a Gaussian perturbation of $\mu=0$ and $\sigma=1$.}
+\end{figure}
+Fig~\ref{fig:skewgaus100} shows the skewness for $\sigma=1$, it can be seen how the skewnees has its maximum positive value close to the wall and then when it is approaching to the log region it exhibits a Gaussian behaviour to raise up to its maximum negative value at the end of the logarithmic region.  Unlike the experimental results for a turbulent skewness, the boundaries don't have the right trend. This is caused mainly because the first and last step in our model are not being perturbed. Further investigation is necessary to establish the proper boundary conditions in order to reproduce the real tendency in the boundaries for the skewness.
+\begin{figure}[tb]
+\includegraphics[scale=0.46]{figures/skewness_5000_assembles_gauss100}
+\caption{\label{fig:skewgaus100} Skewness of streamwise velocity fluctuations for 5000 independent realizations with a Gaussian perturbation of $\mu=0$ and $\sigma=1$ (open circles). The skewness for a Gaussian distribution is plotted in dotted lines as a reference.}
+\end{figure}
+A similar pattern can be seen for the streamwise kurtosis (Fig~\ref{fig:kurtgaus100}), where the tendency in the boundaries does not reproduce accurately the experimental results. However in the logarithmic region the kurtosis exhibits a subgaussian trend just as the real data does. For $y^+=\delta^+$ is expected that the kurtosis reach its maximum value and
+then decays in the free-stream region for the flow. This suggest that a different distribution can be used to perturb the position of the vortical fissures which edges decays smoother than the gaussian distribution. 
+\begin{figure}[tb] 
+\includegraphics[scale=0.46]{figures/kurtosis_5000_assembles_gauss100}
+\caption{\label{fig:kurtgaus100} Kurtosis of streamwise velocity fluctuations for 5000 independent realizations with a Gaussian perturbation of $\mu=0$ and $\sigma=1$ (open circles). The kurtosis for a Gaussian distribution is plotted in dotted lines as a reference.}
+\end{figure}
+Thus a uniform distribution is explored in the next section, which attempts to avoid this undesirable tendency in the boundaries of the turbulent boundary layer.
+\subsection{Uniform distribution}
+In order to allow vortical fissure crossing a uniform distribution between $-130\%$ and $130\%$ of the height of the step was selected. Fig~\ref{fig:mp_un130}  shows the streamwise velocity profile for this perturbation. Unlike Fig~\ref{fig:mean_profile}, the jumps in the velocity profile seems to have a more straight slope. 
+\begin{figure}[b]
+\includegraphics[scale=0.46]{figures/Master_averaged_step_profile_5000_assembles_un130}
+\caption{\label{fig:mp_un130} Mean turbulent stream-wise velocity profile for 5000 independent realizations with an uniform perturbation of $\pm 130$.}
 \end{figure}
 
-
-\subsection{Uniform distribution}    
+     
 %\nocite{*}
 \bibliography{Aps_template2}% Produces the bibliography via BibTeX.
 \end{document}
